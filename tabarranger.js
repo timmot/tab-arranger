@@ -4,12 +4,9 @@ function contextClick(info, tab)
 
 function stripURL(url)
 {
-    var matches = url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
-
-    var parts = matches[1].split(".");
-    matches[1] = parts[parts.length-2];
-
-    return matches[1];
+    // first [] matches domain, second and third attempt to match TLDs
+    var matches = url.match(/[-a-z0-9]*\.[a-z]{2,3}\.?[a-z]{0,3}\/.*/i);
+    return matches && matches[0];
 }
 
 function compareTabs(a,b)
@@ -21,6 +18,7 @@ function compareTabs(a,b)
         return -1;
     if (aurl > burl)
         return 1;
+
     return 0;
 }
 
@@ -29,7 +27,8 @@ function tabsCallback(tabs)
     sortedTabs = tabs.concat().sort(compareTabs);
 
     for (var i = 0; i < tabs.length; ++i)
-        chrome.tabs.move(sortedTabs[i].id,{"index": i});
+    {   chrome.tabs.move(sortedTabs[i].id,{"index": i});
+    }
 }
 
 var id = chrome.contextMenus.create({"title": "Arrange tabs", 
