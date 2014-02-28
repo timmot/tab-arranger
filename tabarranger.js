@@ -5,7 +5,7 @@ function contextClick(info, tab)
 function stripURL(url)
 {
     // first [] matches domain, second and third attempt to match TLDs
-    var matches = url.match(/[-a-z0-9]*\.[a-z]{2,3}\.?[a-z]{0,3}\/.*/i);
+    var matches = url.match(/[-a-z0-9]*\.\w{2,3}\.?\w{0,3}\/.*/i);
     return matches && matches[0];
 }
 
