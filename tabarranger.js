@@ -27,8 +27,7 @@ function tabsCallback(tabs)
     tabs.sort(compareTabs);
 
     for (var i = 0; i < tabs.length; ++i)
-    {   chrome.tabs.move(tabs[i].id,{"index": i});
-    }
+        chrome.tabs.move(tabs[i].id,{"index": i});
 }
 
 var id = chrome.contextMenus.create({"title": "Arrange tabs", 
