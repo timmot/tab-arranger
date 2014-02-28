@@ -24,10 +24,10 @@ function compareTabs(a,b)
 
 function tabsCallback(tabs)
 {
-    sortedTabs = tabs.concat().sort(compareTabs);
+    tabs.sort(compareTabs);
 
     for (var i = 0; i < tabs.length; ++i)
-    {   chrome.tabs.move(sortedTabs[i].id,{"index": i});
+    {   chrome.tabs.move(tabs[i].id,{"index": i});
     }
 }
 
