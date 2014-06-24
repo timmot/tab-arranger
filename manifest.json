@@ -1,7 +1,7 @@
 {
   "name": "Tab Arranger",
   "description": "Creates a context menu option which allows you to arrange tabs in alphabetical order by domain",
-  "version": "1.0",
+  "version": "0.3",
   "permissions": [
     "tabs",
     "contextMenus"

@@ -1,6 +1,5 @@
-turnt-robot
-=========
 Tab Arranger for Google Chrome
+==============================
 
 
 Installation
@@ -9,4 +8,10 @@ Installation
 * In Chrome, Tools>Extensions
 * Tick Developer Mode
 * Load unpacked extension...
-* Browse to where you saved the repo and select the folder
+* Browse to and select the repo
+
+
+Use
+---
+* Right click in the context of a page
+* Click 'Arrange Tabs'
